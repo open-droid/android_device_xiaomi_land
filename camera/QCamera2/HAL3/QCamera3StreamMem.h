@@ -65,7 +65,7 @@ public:
 
     // Gralloc buffer related functions
     int registerBuffer(buffer_handle_t *buffer, cam_stream_type_t type);
-    int unregisterBuffer(uint32_t index);
+    int unregisterBuffer(size_t idx);
     int getMatchBufIndex(void *object);
     void *getBufferHandle(uint32_t index);
     void unregisterBuffers(); //TODO: relace with unififed clear() function?

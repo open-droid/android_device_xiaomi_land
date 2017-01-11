@@ -17,7 +17,7 @@ LOCAL_C_INCLUDES += \
     $(LOCAL_PATH)/inc \
     $(LOCAL_PATH)/../common \
     $(LOCAL_PATH)/../mm-camera-interface/inc \
-    $(LOCAL_PATH)/../../.. \
+    $(LOCAL_PATH)/../../../ \
     $(LOCAL_PATH)/../../../mm-image-codec/qexif \
     $(LOCAL_PATH)/../../../mm-image-codec/qomx_core
 

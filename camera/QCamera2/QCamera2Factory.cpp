@@ -40,7 +40,7 @@
 #include "HAL3/QCamera3HWI.h"
 #include "util/QCameraFlash.h"
 #include "QCamera2Factory.h"
-#include "QCameraMuxer.h"
+#include "HAL/QCameraMuxer.h"
 
 extern "C" {
 #include "mm_camera_dbg.h"
