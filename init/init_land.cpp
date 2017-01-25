@@ -112,7 +112,7 @@ void vendor_load_properties()
     char device[PROP_VALUE_MAX];
     int rc;
 
-    rc = property_get("ro.cm.device", device);
+    rc = property_get("ro.aokp.device", device);
     if (!rc || strncmp(device, "land", PROP_VALUE_MAX))
         return;
 

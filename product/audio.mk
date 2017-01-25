@@ -1,5 +1,13 @@
+# Audio
+PRODUCT_PACKAGES += \
+    audio.a2dp.default \
+    audio.r_submix.default \
+    audio.usb.default \
+    tinymix
+
 # Permissions
 PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.software.midi.xml:system/etc/permissions/android.software.midi.xml \
     frameworks/native/data/etc/android.hardware.audio.low_latency.xml:system/etc/permissions/android.hardware.audio.low_latency.xml
 
 # Properties
@@ -18,7 +26,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio_hal.period_size=192 \
     ro.qc.sdk.audio.fluencetype=fluence \
     persist.audio.dirac.speaker=true \
-    persist.audio.fluence.speaker=true \
     persist.audio.fluence.voicecall=true \
     use.qti.sw.alac.decoder=true \
     use.qti.sw.ape.decoder=true \
