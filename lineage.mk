@@ -31,7 +31,7 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := land
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := Redmi 3S/Prime/3X
+# PRODUCT_MODEL := Redmi 3S/Prime/3X
 PRODUCT_NAME := lineage_land
 BOARD_VENDOR := Xiaomi
 
