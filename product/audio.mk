@@ -26,3 +26,16 @@ PRODUCT_PROPERTY_OVERRIDES += \
     voice.conc.fallbackpath=deep-buffer \
     voice.playback.conc.disabled=true \
     voice.voip.conc.disabled=true
+
+# Packages
+PRODUCT_PACKAGES += \
+    audiod \
+    audio.a2dp.default \
+    audio.primary.msm8916 \
+    audio.r_submix.default \
+    audio.usb.default \
+    audio_policy.msm8916 \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
+    tinymix
