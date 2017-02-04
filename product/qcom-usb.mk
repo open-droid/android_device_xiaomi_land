@@ -1,3 +1,3 @@
 # Init scripts
 PRODUCT_PACKAGES += \
-    init.qcom.power.rc
+    init.qcom.usb.rc
