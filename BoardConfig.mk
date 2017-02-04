@@ -15,48 +15,30 @@
 #
 
 DEVICE_PATH := device/xiaomi/land
-CM_PATH := vendor/cm/config/board
 
-# Define platform before including any common things
 include $(DEVICE_PATH)/PlatformConfig.mk
 
-# Inherit common ARM64 board fragments
-include $(CM_PATH)/common/arm64/architecture.mk
-include $(CM_PATH)/common/arm64/binder.mk
+# Architecture
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
+TARGET_CPU_VARIANT := cortex-a53
 
-# Inherit common board fragments
-include $(CM_PATH)/common/bluetooth.mk
-include $(CM_PATH)/common/bootloader.mk
-include $(CM_PATH)/common/camera.mk
-include $(CM_PATH)/common/clang.mk
-include $(CM_PATH)/common/cpusets.mk
-include $(CM_PATH)/common/dexopt.mk
-include $(CM_PATH)/common/dlmalloc.mk
-include $(CM_PATH)/common/filesystem.mk
-include $(CM_PATH)/common/gps.mk
-include $(CM_PATH)/common/sepolicy.mk
+# Second architecture
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := armeabi
+TARGET_2ND_CPU_VARIANT := cortex-a53
 
-# Inherit QCOM board fragments
-include $(CM_PATH)/qcom/bluetooth.mk
-include $(CM_PATH)/qcom/bootloader.mk
-include $(CM_PATH)/qcom/cne.mk
-include $(CM_PATH)/qcom/display.mk
-include $(CM_PATH)/qcom/encryption.mk
-include $(CM_PATH)/qcom/fm.mk
-include $(CM_PATH)/qcom/gps.mk
-include $(CM_PATH)/qcom/per-mgr.mk
-include $(CM_PATH)/qcom/platform.mk
-include $(CM_PATH)/qcom/power.mk
-include $(CM_PATH)/qcom/recovery.mk
-include $(CM_PATH)/qcom/ril.mk
-include $(CM_PATH)/qcom/sepolicy.mk
-include $(CM_PATH)/qcom/time.mk
 
-# Inherit Cyanogen board fragments
-include $(CM_PATH)/cyanogen/hardware.mk
+TARGET_BOARD_SUFFIX := _64
 
-# Inherit device-specific board fragments
 include $(DEVICE_PATH)/board/*.mk
+
+# Properties
+TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 
 # Inherit the proprietary files
 -include vendor/xiaomi/land/BoardConfigVendor.mk
