@@ -15,6 +15,7 @@ ro.qc.sdk.audio.fluencetype=fluence
 persist.audio.dirac.speaker=true
 persist.audio.fluence.speaker=true
 persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=true
 use.qti.sw.alac.decoder=true
 use.qti.sw.ape.decoder=true
 use.voice.path.for.pcm.voip=true
@@ -133,7 +134,7 @@ telephony.lteOnCdmaDevice=1
 wifi.interface=wlan0
 
 # ZRAM (qcom)
-camera.hal1.packagelist=com.skype.raider,com.google.android.talk
+camera.hal1.packagelist=com.skype.raider,com.google.android.talk,com.whatsapp,com.google.android.GoogleCamera
 media.camera.ts.monotonic=0
 persist.camera.gyro.android=1
 persist.camera.is_type=1

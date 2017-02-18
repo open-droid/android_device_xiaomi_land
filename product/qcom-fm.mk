@@ -1,7 +1,3 @@
-# Init
-PRODUCT_PACKAGES += \
-    init.qcom.fm.sh
-
 # Packages
 PRODUCT_PACKAGES += \
     FM2 \
