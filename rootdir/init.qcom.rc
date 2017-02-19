@@ -845,7 +845,7 @@ service poweroffhandler /system/bin/poweroffhandler
     group graphics audio
     disabled
     oneshot
-
+    
 service fingerprintd /system/bin/fingerprintd
     class late_start
     socket fpce stream 0666 system system

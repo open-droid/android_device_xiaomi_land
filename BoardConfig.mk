@@ -1,6 +1,5 @@
 #
 # Copyright (C) 2016 The CyanogenMod Project
-#               2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -33,9 +32,46 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
+
 TARGET_BOARD_SUFFIX := _64
 
-include $(DEVICE_PATH)/board/*.mk
+include $(DEVICE_PATH)/board/ant.mk
+include $(DEVICE_PATH)/board/binder.mk
+include $(DEVICE_PATH)/board/bluetooth.mk
+include $(DEVICE_PATH)/board/bootloader.mk
+include $(DEVICE_PATH)/board/camera.mk
+include $(DEVICE_PATH)/board/charger.mk
+include $(DEVICE_PATH)/board/clang.mk
+include $(DEVICE_PATH)/board/cpusets.mk
+include $(DEVICE_PATH)/board/dexopt.mk
+include $(DEVICE_PATH)/board/dlmalloc.mk
+include $(DEVICE_PATH)/board/filesystem.mk
+include $(DEVICE_PATH)/board/gps.mk
+include $(DEVICE_PATH)/board/kernel.mk
+include $(DEVICE_PATH)/board/recovery.mk
+include $(DEVICE_PATH)/board/sensors.mk
+include $(DEVICE_PATH)/board/sepolicy.mk
+
+include $(DEVICE_PATH)/board/qcom-audio.mk
+include $(DEVICE_PATH)/board/qcom-bluetooth.mk
+include $(DEVICE_PATH)/board/qcom-bootloader.mk
+include $(DEVICE_PATH)/board/qcom-cne.mk
+include $(DEVICE_PATH)/board/qcom-display.mk
+include $(DEVICE_PATH)/board/qcom-encryption.mk
+include $(DEVICE_PATH)/board/qcom-fm.mk
+include $(DEVICE_PATH)/board/qcom-gps.mk
+include $(DEVICE_PATH)/board/qcom-init.mk
+include $(DEVICE_PATH)/board/qcom-keymaster.mk
+include $(DEVICE_PATH)/board/qcom-per_mgr.mk
+include $(DEVICE_PATH)/board/qcom-platform.mk
+include $(DEVICE_PATH)/board/qcom-power.mk
+include $(DEVICE_PATH)/board/qcom-recovery.mk
+include $(DEVICE_PATH)/board/qcom-ril.mk
+include $(DEVICE_PATH)/board/qcom-sepolicy.mk
+include $(DEVICE_PATH)/board/qcom-time.mk
+include $(DEVICE_PATH)/board/qcom-wlan.mk
+
+include $(DEVICE_PATH)/board/cyanogen-hardware.mk
 
 # Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop

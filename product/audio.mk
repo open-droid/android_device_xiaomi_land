@@ -5,8 +5,13 @@ PRODUCT_COPY_FILES += \
 
 # Packages
 PRODUCT_PACKAGES += \
+    audiod \
     audio.a2dp.default \
+    audio.primary.msm8937 \
     audio.r_submix.default \
     audio.usb.default \
-    audio_policy.$(TARGET_BOARD_PLATFORM) \
+    audio_policy.msm8916 \
+    libqcompostprocbundle \
+    libqcomvisualizer \
+    libqcomvoiceprocessing \
     tinymix
