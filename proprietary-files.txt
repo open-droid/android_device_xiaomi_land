@@ -144,6 +144,7 @@ vendor/lib64/libxml.so
 
 # Camera
 bin/mm-qcamera-daemon
+lib/hw/camera.msm8937.so:lib/hw/camera.vendor.msm8937.so
 etc/camera/ofilm_s5k5e8_chromatix.xml
 etc/camera/ov13853_q13853a_chromatix.xml
 etc/camera/ov5670_f5670bq_chromatix.xml
