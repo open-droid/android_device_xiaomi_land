@@ -31,17 +31,17 @@ $(call inherit-product, $(LOCAL_PATH)/device.mk)
 PRODUCT_BRAND := Xiaomi
 PRODUCT_DEVICE := land
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_MODEL := Redmi 3S #/Prime/3X
+# PRODUCT_MODEL := Redmi 3S/Prime/3X
 PRODUCT_NAME := lineage_land
+BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
 
 TARGET_VENDOR_PRODUCT_NAME := land
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    BUILD_FINGERPRINT=Xiaomi/land/land:6.0.1/MMB29M/6.11.3:user/release-keys \
-    PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M 6.11.3 release-keys"
+    BUILD_FINGERPRINT=Xiaomi/land/land:6.0.1/MMB29M/7.2.9:user/release-keys \
+    PRIVATE_BUILD_DESC="land-user 6.0.1 MMB29M 7.2.9 release-keys"
 
-
-#PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
-#    ro.product.model
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST += \
+    ro.product.model

@@ -42,10 +42,6 @@ on init
     # Set permissions for persist partition
     mkdir /persist 0771 system system
 
-    # Support legacy paths
-    symlink /sdcard /mnt/sdcard
-    symlink /sdcard /storage/sdcard0
-
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
 on fs
@@ -53,10 +49,6 @@ on fs
 
     mkdir /persist/data 0700 system system
     restorecon_recursive /persist
-
-on post-fs
-    wait /dev/block/bootdevice/by-name/oem
-    mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev barrier=1
 
 # msm specific files that need to be created on /data
 on post-fs-data
@@ -388,6 +380,16 @@ on boot
     chown root system /sys/class/leds/green/blink
     chown root system /sys/class/leds/blue/blink
 
+    # IR blaster
+    chown root system /sys/class/leds/infrared/transmit
+    chown root system /sys/class/leds/infrared/brightness
+
+    # Subsystem restart
+    write /sys/bus/msm_subsys/devices/subsys0/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys1/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys2/restart_level related
+    write /sys/bus/msm_subsys/devices/subsys3/restart_level related
+
 on class_start:late_start
     write /proc/sys/net/ipv6/conf/default/accept_ra_defrtr 1
 
@@ -400,6 +402,11 @@ service iop /system/bin/iop
     user root
     group root
     disabled
+
+on post-fs
+    # Support legacy paths
+    symlink /sdcard /mnt/sdcard
+    symlink /sdcard /storage/sdcard0
 
 service qcomsysd /system/bin/qcom-system-daemon
     class main
@@ -577,7 +584,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
     -I/system/etc/wifi/p2p_supplicant_overlay.conf -N \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 -dd \
+    -O/data/misc/wifi/sockets -puse_p2p_group_interface=1 \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
 #   we will start as root and wpa_supplicant will switch to user wifi
 #   after setting up the capabilities required for WEXT
@@ -591,7 +598,7 @@ service p2p_supplicant /system/bin/wpa_supplicant \
 service wpa_supplicant /system/bin/wpa_supplicant \
     -iwlan0 -Dnl80211 -c/data/misc/wifi/wpa_supplicant.conf \
     -I/system/etc/wifi/wpa_supplicant_overlay.conf \
-    -O/data/misc/wifi/sockets -dd \
+    -O/data/misc/wifi/sockets \
     -e/data/misc/wifi/entropy.bin -g@android:wpa_wlan0
     #   we will start as root and wpa_supplicant will switch to user wifi
     #   after setting up the capabilities required for WEXT
@@ -855,7 +862,11 @@ service gx_fpd /system/bin/gx_fpd
 on property:persist.sys.fp.vendor=switchf
     stop gx_fpd
     setprop persist.sys.fp.vendor searchf
-    start fingerprintd  
+    start fingerprintd
+    setprop ro.boot.fpsensor fpc
+
+on property:persist.sys.fp.vendor=goodix
+    setprop ro.boot.fpsensor gdx
 
 on property:persist.sys.fp.onstart=1
    start fingerprintd
@@ -908,6 +919,7 @@ service wcnss-service /system/bin/wcnss_service
     class main
     user system
     group system wifi radio
+    oneshot
 
 service imsqmidaemon /system/bin/imsqmidaemon
     class main
