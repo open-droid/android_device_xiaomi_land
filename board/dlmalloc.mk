@@ -1,1 +1,0 @@
-MALLOC_IMPL := dlmalloc
