@@ -1283,11 +1283,9 @@ etc/firmware/DE.o.msm8937
 etc/media_codecs_performance.xml
 etc/media_profiles.xml
 lib/libOmxSwVdec.so
-lib/libOmxSwVencMpeg4.so
 lib/libOmxVpp.so
 lib/libvpplibrary.so
 lib64/libOmxSwVdec.so
-lib64/libOmxSwVencMpeg4.so
 vendor/lib/libAlacSwDec.so
 vendor/lib/libApeSwDec.so
 vendor/lib/libFlacSwDec.so
