@@ -1,4 +1,5 @@
 /* Copyright (c) 2013-2015, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2017 The LineageOS Project
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -268,7 +269,7 @@ typedef struct {
 
 /** Represents SV status. */
 typedef struct {
-    /** set to sizeof(GnssSvStatus) */
+    /** set to sizeof(QcomSvStatus) */
     size_t          size;
 
     /** Number of SVs currently visible. */
@@ -303,9 +304,8 @@ typedef struct {
      * Represents a bit mask indicating which BDS SVs
      * were used for computing the most recent position fix.
      */
-    uint64_t    bds_used_in_fix_mask;
 
-} GnssSvStatus;
+} QcomSvStatus;
 
 enum loc_sess_status {
     LOC_SESS_SUCCESS,

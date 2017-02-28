@@ -1,4 +1,5 @@
 /* Copyright (c) 2012, The Linux Foundation. All rights reserved.
+ * Copyright (c) 2017 The LineageOS Project
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions are
@@ -604,7 +605,7 @@ SIDE EFFECTS
 
 ===========================================================================*/
 void loc_eng_nmea_generate_sv(loc_eng_data_s_type *loc_eng_data_p,
-                              const GnssSvStatus &svStatus, const GpsLocationExtended &locationExtended)
+                              const QcomSvStatus &svStatus, const GpsLocationExtended &locationExtended)
 {
     ENTRY_LOG();
 
