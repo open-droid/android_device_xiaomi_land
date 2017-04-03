@@ -10,4 +10,5 @@ PRODUCT_PACKAGES += \
     camera.msm8937 \
     libshim_camera \
     libboringssl-compat \
-    libstlport
+    libstlport \
+	Snap
